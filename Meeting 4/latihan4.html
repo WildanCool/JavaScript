@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="cekNilai()">Cek Nilai</button>
+  </body>
+  <script>
+    function cekNilai() {
+      var nilai = prompt("Masukkan Nilai :");
+      var kehadiran = prompt("Masukkan Kehadiran :");
+      var totalpertemuan = prompt("Masukkan Total Pertemuan :");
+      var kategoriNilai = "";
+
+      var lulus = (kehadiran / totalpertemuan) * 100;
+
+      if (nilai >= 85) {
+        console.log((kategoriNilai = "Nilai A"));
+        if (lulus >= 75) {
+          alert(kategoriNilai + " Lulus");
+        } else {
+          alert(kategoriNilai + " Tidak Lulus");
+        }
+      } else if (nilai > 70 && nilai < 85) {
+        console.log((kategoriNilai = "Nilai B"));
+        if (lulus >= 75) {
+          alert(kategoriNilai + " Lulus");
+        } else {
+          alert(kategoriNilai + " Tidak Lulus");
+        }
+      } else if (nilai >= 50 && nilai < 71) {
+        console.log((kategoriNilai = "Nilai C"));
+        if (lulus >= 75) {
+          alert(kategoriNilai + " Lulus");
+        } else {
+          alert(kategoriNilai + " Tidak Lulus");
+        }
+      } else if (nilai < 50) {
+        alert((kategoriNilai = "TIDAK LULUS"));
+      }
+    }
+  </script>
+</html>
