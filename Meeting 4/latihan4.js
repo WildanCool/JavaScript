@@ -30,3 +30,17 @@ if (nilai >= 85) {
 } else if (nilai < 50) {
   console.log((kategoriNilai = "TIDAK LULUS"));
 }
+
+// Nomer 2
+var pendaftaran = false;
+var pembayaran = false;
+
+if (pendaftaran === true) {
+  if (pembayaran === true) {
+    console.log("Dapat mengikuti kursus");
+  } else {
+    console.log("Tidak dapat mengikuti kursus");
+  }
+} else {
+  console.log("Tidak dapat mengikuti kursus");
+}
