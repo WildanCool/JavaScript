@@ -32,6 +32,10 @@ class book {
   getDetails() {
     return `Title: ${this.title}, Author: ${this.author}`;
   }
+
+  test() {
+    return `Title: ${this.title}, Author: ${this.author}`;
+  }
   updateAuthor(newAuthor) {
     this.author = newAuthor;
   }
