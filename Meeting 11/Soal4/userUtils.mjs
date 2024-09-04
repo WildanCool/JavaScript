@@ -9,4 +9,4 @@ function getUserRole (userRole) {
 }
 
 export default getUser
-export { getUserRole }
+export { userRole, getUserRole }
