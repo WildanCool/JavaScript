@@ -41,6 +41,7 @@ function calculatePrice(quantity, pricePerItem, isMember) {
 
 console.log(calculatePrice(3, 15000, true));
 console.log(calculatePrice(3, 15000, false));
+var totalPrice = calculatePrice(3, 15000, true);
 
 function confirmPurchase(isConfirmed, totalPrice) {
   if (isConfirmed === true) {
@@ -50,13 +51,13 @@ function confirmPurchase(isConfirmed, totalPrice) {
   }
 }
 
-console.log(confirmPurchase(true, 15000));
-console.log(confirmPurchase(false, 15000));
+console.log(confirmPurchase(true, totalPrice));
+console.log(confirmPurchase(false, totalPrice));
 
 // Soal 3 GDrive
+var Stock = 50;
+const requestedQuantity = 60;
 function checkStock(requestedQuantity, item) {
-  var Stock = 50;
-
   if (requestedQuantity > Stock) {
     return `Stock insufficient for ${item}.`;
   } else {
@@ -66,6 +67,19 @@ function checkStock(requestedQuantity, item) {
 
 console.log(checkStock(60, "Laptop"));
 console.log(checkStock(50, "Laptop"));
+
+function restockItem(item, additionalStock) {
+  var newStock = Stock + additionalStock;
+
+  if (newStock >= requestedQuantity) {
+    return `Restock complete for ${item}.`;
+  } else {
+    return `Restock needed for ${item}.`;
+  }
+}
+
+console.log(restockItem("Laptop", 10));
+console.log(restockItem("Laptop", 5));
 
 // Soal 4 GDrive
 function calculateTax(price, location) {
