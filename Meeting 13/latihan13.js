@@ -92,25 +92,25 @@
 //   });
 
 // Soal 5 GDrive
-function fetchDataA () {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve("Data A");
-        }, 1000);
-    });
+function fetchDataA() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Data A");
+    }, 1000);
+  });
 }
-function fetchDataB () {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve("Data b");
-        }, 2000);
-    });
+function fetchDataB() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Data b");
+    }, 2000);
+  });
 }
 
 Promise.all([fetchDataA(), fetchDataB()])
-    .then((result) => {
-        console.log(result);
-    })
-    .catch((error) => {
-        console.log(error);
-    })
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
