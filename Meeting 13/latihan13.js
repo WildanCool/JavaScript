@@ -67,50 +67,50 @@
 //   });
 
 // Soal 4 GDrive
-// let duration = 1000;
-// function simulateTask() {
-//   return new Promise((resolve, reject) => {
-//     if (duration <= 2000) {
-//       setTimeout(() => {
-//         resolve("Task Success");
-//       }, duration);
-//     } else {
-//       reject("Task Failed");
-//     }
-//   });
-// }
-
-// simulateTask()
-//   .then((result) => {
-//     console.log(result);
-//   })
-//   .catch((error) => {
-//     console.log(error);
-//   })
-//   .finally(() => {
-//     console.log("Task completed.");
-//   });
-
-// Soal 5 GDrive
-function fetchDataA() {
+let duration = 1000;
+function simulateTask() {
   return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve("Data A");
-    }, 1000);
-  });
-}
-function fetchDataB() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve("Data b");
-    }, 2000);
+    if (duration <= 2000) {
+      setTimeout(() => {
+        resolve("Task Success");
+      }, duration);
+    } else {
+      reject("Task Failed");
+    }
   });
 }
 
-Promise.all([fetchDataA(), fetchDataB()])
+simulateTask()
   .then((result) => {
     console.log(result);
   })
   .catch((error) => {
     console.log(error);
+  })
+  .finally(() => {
+    console.log("Task completed.");
   });
+
+// Soal 5 GDrive
+// function fetchDataA() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve("Data A");
+//     }, 1000);
+//   });
+// }
+// function fetchDataB() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve("Data b");
+//     }, 2000);
+//   });
+// }
+
+// Promise.all([fetchDataA(), fetchDataB()])
+//   .then((result) => {
+//     console.log(result);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
