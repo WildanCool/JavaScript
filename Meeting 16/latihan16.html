@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="id">Selamat Datang</h1>
+    <h2 class="kelas">Selamat Datang</h2>
+    <h3>Selamat Datang</h3>
+  </body>
+  <script>
+    // Akses DOM
+    let id = document.getElementById("id");
+    let kelas = document.getElementsByClassName("kelas");
+    let tag = document.getElementsByTagName("h3");
+
+    console.log(id);
+    console.log(kelas);
+    console.log(tag);
+
+    // Edit DOM
+    id.innerHTML = "Halo, semangat belajar DOM";
+    // .innerHTML untuk mengubah isi DOM secara keseluruhan termasuk tag yang ada di dalamnya
+    // .innerText untuk mengubah isi DOM tanpa tag
+    // .textContent untuk membaca isi tag secara keseluruhan tanpa tag
+
+    // Menambah DOM
+    const newElement = document.createElement("p");
+    newElement.innerHTML = "Membuat Element Baru 'p'";
+    kelas[0].appendChild(newElement);
+
+    // Menghapus DOM
+    kelas[0].removeChild(newElement)
+  </script>
+</html>

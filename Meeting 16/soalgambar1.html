@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="div1">
+      <p class="coba">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+        laboriosam
+        <span class=""
+          >consequatur quos facere, nulla accusamus nam mollitia saepe corrupti
+          aspernatur.</span
+        >
+      </p>
+    </div>
+  </body>
+  <script>
+    const div1 = document.getElementById("div1");
+    div1.style.color = "red";
+
+    const querySelector = document.querySelector(".coba");
+    querySelector.innerText = "Element Pertama yang diubah"
+  </script>
+</html>

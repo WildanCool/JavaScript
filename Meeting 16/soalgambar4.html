@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="colorBox" style="color: black">
+      Ini adalah teks yang akan diubah warnanya
+    </div>
+  </body>
+  <script>
+    let box = document.getElementById("colorBox");
+    let ubahWarna = prompt("Tulis Warna yang Anda Inginkan");
+
+    if (ubahWarna == "red" || ubahWarna == "merah") {
+      box.style.color = "red";
+    } else if (ubahWarna == "blue" || ubahWarna == "biru") {
+      box.style.color = "blue";
+    } else if (ubahWarna == "green" || ubahWarna == "hijau") {
+      box.style.color = "green";
+    } else {
+      alert("Warna tidak valid, silahkan masukkan warna yang valid");
+    }
+  </script>
+</html>

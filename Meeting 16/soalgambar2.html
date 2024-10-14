@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="konten">Teks Awal</div>
+  </body>
+  <script>
+    const konten = document.getElementsByClassName("konten");
+    
+    konten.innerHTML = "<b>Teks Baru</b>";
+    console.log(konten.innerHTML);
+    konten.innerText = "Teks2 Baru";
+    console.log(konten.innerText);
+    konten.textContent = "<b>Konten Baru</b>";
+    console.log(konten.textContent);
+  </script>
+</html>
