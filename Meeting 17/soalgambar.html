@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Soal 1 -->
+    <img src="" alt="" id="myImage" />
+    <!-- Soal 1 -->
+    <br />
+
+    <!-- Soal 2 -->
+    <button id="myButton">This is myButton</button>
+    <!-- Soal 2 -->
+
+    <!-- Soal 3 -->
+    <!-- Soal 4 -->
+
+    <ul id="myList">
+      <li id="1">Item 1</li>
+      <li id="2">Item 2</li>
+    </ul>
+
+    <!-- <ul class="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul> -->
+
+    <!-- Soal 3 -->
+    <!-- Soal 4 -->
+
+    <!-- Soal 5 -->
+    <div id="imageContainer"></div>
+
+    <!-- Soal 5 -->
+  </body>
+  <script>
+    // Soal 1
+    const gambar = document.getElementById("myImage");
+    gambar.src = "https://picsum.photos/200/300";
+    // Soal 1
+
+    // soal 2
+    const myButton = document.getElementById("myButton");
+    myButton.style.borderRadius = "25px";
+    // Soal 2
+
+    // Soal 3
+    const itemBaru = document.createElement("li");
+    itemBaru.innerText = "Item Baru";
+
+    const myList = document.getElementById("myList");
+    myList.appendChild(itemBaru);
+    // myList[1].appendChild(itemBaru); // [1] jika kita mempunya elemen html dan class yang sama maka kita bisa memakainya
+    // Soal 3
+
+    // Soal 4
+    const itemSisipan = document.createElement("li");
+    itemSisipan.innerText = "Item yang Disisipkan";
+
+    myList.insertBefore(itemSisipan, myList.firstChild);
+    // Soal 4
+
+    // Soal 5
+    const newImg = document.createElement("img");
+    newImg.setAttribute("src", "https://picsum.photos/200/300");
+    newImg.setAttribute("style", "border-radius: 50%;");
+
+    const imageContainer = document.getElementById("imageContainer");
+    imageContainer.appendChild(newImg);
+    // Soal 5
+  </script>
+</html>
