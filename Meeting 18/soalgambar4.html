@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soal Gambar No 4 Meet 18</title>
+    <style>
+      h1 {
+        text-align: center;
+        margin-top: 15%;
+      }
+      button {
+        padding: 10px;
+        margin-left: 41%;
+        background-color: #282ff8;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 30px;
+        font-family: "Times New Roman", Times, serif;
+      }
+
+      button:hover {
+        background-color: #686df5;
+      }
+    </style>
+  </head>
+  <body onload="pertanyaan1()">
+    <h1>HELOO BRUDAAA</h1>
+    <button id="tombolPesan">Klik Saya!</button>
+
+    <script>
+      function pertanyaan1() {
+        let konfirmasiAwal = confirm("Apakah anda ingin melanjutkan?");
+        if (konfirmasiAwal == true) {
+          alert("Selamat datang di halaman");
+          nama();
+        } else {
+          alert("Anda memilihh untuk tidak melanjutkan");
+        }
+      }
+
+      function nama() {
+        const masukkanNama = prompt("Masukkan nama anda");
+
+        if (masukkanNama == "") {
+          const ulang = confirm("Apakah anda ingin mengulang?");
+          if (ulang == true) {
+            nama();
+          } else {
+            alert("Terimakasih");
+          }
+        } else if (masukkanNama == null) {
+          alert("Terimakasih");
+        } else {
+          alert("Selamat datang " + masukkanNama);
+        }
+      }
+
+      const tombolPesan = document.getElementById("tombolPesan");
+      tombolPesan.textContent = "Tampilkan Pesan";
+      tombolPesan.addEventListener("click", nama);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soal Gambar Meeting 18</title>
+  </head>
+  <body>
+    <!-- Soal 1 -->
+    <button id="myButton1">KLIK AKU!</button>
+
+    <!-- Soal 2 -->
+    <button id="myButton2">TUGAS 2</button>
+
+    <!-- Soal 3 -->
+    <button id="myButton3">TUGAS 3</button>
+    <h3>Kamu sudah menekan tombol sebanyak <p id="nyimpanAngka">0</p></h3>
+
+    <script>
+      // Soal 1
+      const myButton1 = document.getElementById("myButton1");
+      function success() {
+        alert("Tombol berhasil diklik!");
+      }
+      myButton1.addEventListener("click", success);
+
+      // Soal 2
+      const myButton2 = document.getElementById("myButton2");
+      function myAlert() {
+        alert("Tombol Tugas 2!");
+      }
+
+      window.onload = function () {
+        myButton2.addEventListener("click", myAlert);
+      };
+
+      // Soal 3
+      const myButton3 = document.getElementById("myButton3");
+      function tambahAngka () {
+          document.getElementById("nyimpanAngka").innerText++;
+      }
+      myButton3.addEventListener("click", tambahAngka);
+    </script>
+  </body>
+</html>
