@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soal gambar 2</title>
+  </head>
+  <body>
+    <div id="parent">
+      <button id="myButton">CLICK ME</button>
+    </div>
+    <script>
+      const buttonClicked = new Event("buttonClicked");
+
+      function handleButtonClick() {
+        console.log("Button was clicked");
+        document.getElementById("myButton").dispatchEvent(buttonClicked);
+        handleParentClick();
+      }
+
+      function handleParentClick() {
+        console.log("Parent div received the event!");
+      }
+
+      window.addEventListener("load", function () {
+        const button = document.getElementById("myButton");
+        const parent = document.getElementById("parent");
+
+        // Menambahkan event listener untuk tombol
+        button.addEventListener("click", handleButtonClick);
+
+        // Menambahkan event listener untuk parent
+        parent.addEventListener("buttonClicked", handleParentClick);
+      });
+
+      // document.getElementById("myButton").addEventListener("click", function(){
+      //     console.log("Button was clicked");
+      // });
+
+      // document.getElementById("parent").addEventListener("click", function(){
+      //     console.log("Parent div received the event!");
+      // });
+      //
+    </script>
+  </body>
+</html>

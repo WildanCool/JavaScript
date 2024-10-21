@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>latihan 19</title>
+    <style>
+      .buttons {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 2px solid black;
+        padding: 15px;
+      }
+      .button {
+        margin: 8px;
+        height: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- contoh e-Book -->
+    <h1>Butuh Motivasi?</h1>
+    <h3 id="caption">Tekan tombol untuk mendapatkan motivasi</h3>
+    <button class="tombol" id="button">Dapatkan Motivasi</button>
+
+    <!-- contoh dicoding -->
+    <div class="buttons" align="center">
+      <h3 id="caption2">Silakan tekan salah satu tombol di bawah...</h3>
+      <button class="button2" id="tombol2">Tombol Custom Event</button>
+    </div>
+
+    <!-- bubling & capturing -->
+    <div id="parent">
+      <button id="child">Klik Saya</button>
+    </div>
+
+    <script>
+      // contoh e-Book
+      const getMotivationEvent = new Event("getMotivation");
+
+      //   Membuat custom Event
+      function motivationHandler() {
+        document.getElementById("caption").innerText =
+          "Jangan berhenti sampai kamu bangga";
+      }
+
+      //   Menembahkan listener saat halaman dimuat
+      window.addEventListener("load", function () {
+        const tombol = document.getElementById("button");
+        document.addEventListener("getMotivation", motivationHandler);
+        tombol.addEventListener("click", function () {
+          document.dispatchEvent(getMotivationEvent);
+        });
+      });
+
+      // contoh dicoding
+      // membuat custom event
+      const changeCaption = new Event("changeCaption");
+
+      window.addEventListener("load", function () {
+        const tombol = document.getElementById("tombol2");
+
+        tombol.addEventListener("changeCaption", customEventHandler);
+        tombol.addEventListener("click", function () {
+          tombol.dispatchEvent(changeCaption);
+        });
+      });
+
+      function customEventHandler(ev) {
+        console.log("Event " + ev.type + " telah dijalankan");
+        const caption = document.getElementById("caption2");
+        caption.innerText = "Anda telah membangkitkan custom event";
+      }
+
+      // bubling & capturing
+      document.getElementById("parent").addEventListener(
+        "click",
+        function () {
+          alert("Parent clicked");
+        },
+        // true
+      );
+
+      document.getElementById("child").addEventListener("click", function () {
+        alert("Child clicked");
+      });
+    </script>
+  </body>
+</html>
