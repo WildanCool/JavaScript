@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div style="position: fixed; border: 5px solid black; padding: 8px">
+      <input type="text" id="inputNama" />
+      <button id="saveButton">Simpan</button>
+      <button id="hapusButton">Hapus</button>
+
+      <h3 id="outputNama">nama</h3>
+      <p id="status"></p>
+    </div>
+  </body>
+  <script>
+    const usernameKey = "USERNAME";
+    const inputNama = document.getElementById("inputNama");
+    const outputNama = document.getElementById("outputNama");
+    const saveButton = document.getElementById("saveButton");
+    const hapusButton = document.getElementById("hapusButton");
+
+    window.addEventListener('load', function () {
+        const storedUsername = localStorage.getItem(usernameKey);
+        const status = document.getElementById("status");
+
+        if (storedUsername) {
+            status.innerText = "Ada data";
+        } else {
+            status.innerText = "Tidak ada data";
+        }
+
+    })
+
+    if (localStorage.getItem(usernameKey) === null) {
+      localStorage.setItem(usernameKey, "");
+    }
+
+    saveButton.addEventListener("click", function () {
+      localStorage.setItem(usernameKey, inputNama.value);
+      outputNama.innerText = "Nama Saya " + localStorage.getItem(usernameKey);
+    });
+
+    outputNama.innerText = "Nama Saya " + localStorage.getItem(usernameKey);
+
+    hapusButton.addEventListener("click", function () {
+      localStorage.removeItem(usernameKey);
+      alert("Data berhasil dihapus, tolong reload halaman ini!");
+    });
+  </script>
+</html>
